@@ -1,0 +1,27 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "%INPUT_CONTAINER_NAME%/{name}.zip",
+      "connection": "rawtestdata_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "inputBlob",
+      "path" : "raw-data/{name}.zip",
+      "direction": "in",
+      "connection": "rawtestdata_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "outputBlob",
+      "path" : "raw-data/{name}-unzipped.{extension}",
+      "direction": "out",
+      "connection": "rawtestdata_STORAGE"
+    }
+  ],
+  "disabled": false
+}
